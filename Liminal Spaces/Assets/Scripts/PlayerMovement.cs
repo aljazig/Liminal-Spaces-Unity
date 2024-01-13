@@ -17,9 +17,11 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate() {
         var x = Input.GetAxis("Horizontal");
-        turn.x += Input.GetAxis("Mouse X");
+        turn.x += Input.GetAxis("Mouse X") * mouseSensitivity;
         var z = Input.GetAxis("Vertical");
-        turn.y += Input.GetAxis("Mouse Y");
+        turn.y += Input.GetAxis("Mouse Y") * mouseSensitivity;
+
+        turn.y = Mathf.Clamp(turn.y, -80, 80);
 
         Rigidbody rg = gameObject.GetComponent<Rigidbody>();
         GameObject cam = gameObject.transform.GetChild(0).gameObject;
@@ -27,9 +29,9 @@ public class PlayerMovement : MonoBehaviour
         Vector3 vel = (speed * z * -transform.forward) + (speed * x * -transform.right);
         rg.velocity = vel;
 
-        Vector3 rot = mouseSensitivity * new Vector3(0, turn.x, 0);
-        Vector3 rotCam = mouseSensitivity * new Vector3(-turn.y, -18f, 0);
-        rotCam.x = Mathf.Clamp(rotCam.x, -80, 80);
+        Vector3 rot = new(0, turn.x, 0);
+        Vector3 rotCam = new(-turn.y, -180, 0);
+        //rotCam.x = Mathf.Clamp(rotCam.x, -80, 80);
         transform.localRotation = Quaternion.Euler(rot);
         cam.transform.localRotation = Quaternion.Euler(rotCam);
     }
