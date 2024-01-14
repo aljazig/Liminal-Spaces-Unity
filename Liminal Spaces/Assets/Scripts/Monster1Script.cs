@@ -36,10 +36,4 @@ public class Monster1Script : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
         }
     }
-
-    void OnTriggerEnter(Collider other) {
-        if (other.gameObject.name == "Player") {
-            SceneManager.LoadScene(3);
-        }
-    }
 }

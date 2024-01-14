@@ -160,6 +160,11 @@ Transform:
   - {fileID: 1965684641}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &139259023 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8787411252353570446, guid: 28e918877b3f67748b13b4f32bf693fd, type: 3}
+  m_PrefabInstance: {fileID: 3533715997715025047}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &277027593
 GameObject:
   m_ObjectHideFlags: 0
@@ -325,10 +330,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1502764055}
   walls:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1303952956}
+  - {fileID: 1656570499}
+  - {fileID: 599488219}
+  - {fileID: 139259023}
   hallwayPosition: {x: 50, y: 100, z: 0}
 --- !u!65 &359892960
 BoxCollider:
@@ -534,6 +539,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 492929338}
   m_CullTransparentMesh: 1
+--- !u!1 &599488219 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7387501935334037891, guid: 28e918877b3f67748b13b4f32bf693fd, type: 3}
+  m_PrefabInstance: {fileID: 3533715997715025047}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &677228372
 GameObject:
   m_ObjectHideFlags: 0
@@ -1115,6 +1125,11 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4821766945737621171, guid: 7aef545c01fbe23bd9698b5454374068, type: 3}
+--- !u!1 &1303952956 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1694559987324195109, guid: 28e918877b3f67748b13b4f32bf693fd, type: 3}
+  m_PrefabInstance: {fileID: 3533715997715025047}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1305245052
 GameObject:
   m_ObjectHideFlags: 0
@@ -1260,6 +1275,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 861764442837812772, guid: 0f890af37b2a0320eabfb9475a70b8c1, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4231145064967421042, guid: 0f890af37b2a0320eabfb9475a70b8c1, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4301953713247744921, guid: 0f890af37b2a0320eabfb9475a70b8c1, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 6244245889702123589, guid: 0f890af37b2a0320eabfb9475a70b8c1, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.3
@@ -1312,10 +1339,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9198129133708965887, guid: 0f890af37b2a0320eabfb9475a70b8c1, type: 3}
-      propertyPath: m_TagString
-      value: Enemy
-      objectReference: {fileID: 0}
     - target: {fileID: 6765484304434922239, guid: 0f890af37b2a0320eabfb9475a70b8c1, type: 3}
       propertyPath: m_Name
       value: posast2 (2)
@@ -1324,19 +1347,12 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
-    - target: {fileID: 861764442837812772, guid: 0f890af37b2a0320eabfb9475a70b8c1, type: 3}
+    - target: {fileID: 9198129133708965887, guid: 0f890af37b2a0320eabfb9475a70b8c1, type: 3}
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
-    - target: {fileID: 4301953713247744921, guid: 0f890af37b2a0320eabfb9475a70b8c1, type: 3}
-      propertyPath: m_TagString
-      value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 4231145064967421042, guid: 0f890af37b2a0320eabfb9475a70b8c1, type: 3}
-      propertyPath: m_TagString
-      value: Enemy
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 201681543763751661, guid: 0f890af37b2a0320eabfb9475a70b8c1, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -1848,6 +1864,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 277027594}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1656570499 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3066457213777042432, guid: 28e918877b3f67748b13b4f32bf693fd, type: 3}
+  m_PrefabInstance: {fileID: 3533715997715025047}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1736926523
 GameObject:
   m_ObjectHideFlags: 0
@@ -2285,9 +2306,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3648565301728185301, guid: 2b69be27cc7a2fa43a9073dce6ad9c29, type: 3}
+      propertyPath: m_TagString
+      value: donut
+      objectReference: {fileID: 0}
     - target: {fileID: 4968253891634708123, guid: 2b69be27cc7a2fa43a9073dce6ad9c29, type: 3}
       propertyPath: m_Name
       value: DonutGuru
+      objectReference: {fileID: 0}
+    - target: {fileID: 5383295246221026613, guid: 2b69be27cc7a2fa43a9073dce6ad9c29, type: 3}
+      propertyPath: m_TagString
+      value: donut
       objectReference: {fileID: 0}
     - target: {fileID: 5744649445503853601, guid: 2b69be27cc7a2fa43a9073dce6ad9c29, type: 3}
       propertyPath: m_LocalScale.x
@@ -2411,6 +2440,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1006860674449610016, guid: e6953dbb66b4ba8999d1210bc19588c9, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 2028064540763497432, guid: e6953dbb66b4ba8999d1210bc19588c9, type: 3}
       propertyPath: player
       value: 
@@ -2458,6 +2491,22 @@ PrefabInstance:
     - target: {fileID: 3228236589694864528, guid: e6953dbb66b4ba8999d1210bc19588c9, type: 3}
       propertyPath: m_Name
       value: Posast1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3228236589694864528, guid: e6953dbb66b4ba8999d1210bc19588c9, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4414649399454575909, guid: e6953dbb66b4ba8999d1210bc19588c9, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 5446778529792061981, guid: e6953dbb66b4ba8999d1210bc19588c9, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 7272703788214533541, guid: e6953dbb66b4ba8999d1210bc19588c9, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
