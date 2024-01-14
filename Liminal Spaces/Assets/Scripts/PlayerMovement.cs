@@ -4,15 +4,23 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
     public float speed = 5.0f;
     public float mouseSensitivity = 5.0f;
+    public GameObject donutText;
+
     private Vector2 turn;
+    TextMeshProUGUI txt;
+    GameObject donutCheck;
+    int points = 0;
 
     void Start() {
         Cursor.lockState = CursorLockMode.Locked;
+        txt = donutText.GetComponent<TextMeshProUGUI>();
+        txt.text = "Donut count: 0";
     }
 
     void FixedUpdate() {
@@ -31,14 +39,21 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 rot = new(0, turn.x, 0);
         Vector3 rotCam = new(-turn.y, -180, 0);
-        //rotCam.x = Mathf.Clamp(rotCam.x, -80, 80);
         transform.localRotation = Quaternion.Euler(rot);
         cam.transform.localRotation = Quaternion.Euler(rotCam);
     }
 
     void OnTriggerEnter(Collider other) {
         if (other.gameObject.tag == "donut") {
+            if (donutCheck != other.transform.root.gameObject) {
+                points += 1;
+                txt.text = "Donut count: " + points;
+                donutCheck = other.transform.root.gameObject;
+            }
             Destroy(other.transform.root.gameObject);
+        }
+        if (other.gameObject.name == "WinTrigger") {
+            
         }
     }
 }
