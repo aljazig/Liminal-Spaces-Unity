@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Monster1Script : MonoBehaviour
@@ -22,11 +23,9 @@ public class Monster1Script : MonoBehaviour
     {
         Vector3 target = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
         float dist = Vector3.Distance(transform.position, target);
-        Debug.DrawLine(transform.position, target);
         RaycastHit hit;
         if (Physics.Linecast(transform.position, target, out hit, LayerMask.GetMask("Default"))) {
             if (hit.transform.name == "Player") {
-                Debug.Log(dist);
                 if (dist <= 10) {
                     chase = true;
                 }
@@ -40,7 +39,7 @@ public class Monster1Script : MonoBehaviour
 
     void OnTriggerEnter(Collider other) {
         if (other.gameObject.name == "Player") {
-            Debug.Log("Death");
+            SceneManager.LoadScene(3);
         }
     }
 }
