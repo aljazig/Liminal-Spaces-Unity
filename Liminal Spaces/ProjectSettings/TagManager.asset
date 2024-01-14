@@ -6,6 +6,7 @@ TagManager:
   tags:
   - hallway
   - donut
+  - Enemy
   layers:
   - Default
   - TransparentFX

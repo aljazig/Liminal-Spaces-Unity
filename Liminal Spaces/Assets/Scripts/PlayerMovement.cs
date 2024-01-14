@@ -5,14 +5,18 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
+using Unity.PlasticSCM.Editor.WebApi;
 
 public class PlayerMovement : MonoBehaviour
 {
     public float speed = 5.0f;
+    public float runSpeed = 10.0f;
     public float mouseSensitivity = 5.0f;
     public GameObject donutText;
 
     private Vector2 turn;
+    private float currentSpeed = 5.0f;
     TextMeshProUGUI txt;
     GameObject donutCheck;
     int points = 0;
@@ -24,6 +28,12 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void FixedUpdate() {
+        if (Input.GetKey(KeyCode.LeftShift)) {
+            currentSpeed = runSpeed;
+        } else {
+            currentSpeed = speed;
+        }
+
         var x = Input.GetAxis("Horizontal");
         turn.x += Input.GetAxis("Mouse X") * mouseSensitivity;
         var z = Input.GetAxis("Vertical");
@@ -34,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
         Rigidbody rg = gameObject.GetComponent<Rigidbody>();
         GameObject cam = gameObject.transform.GetChild(0).gameObject;
 
-        Vector3 vel = (speed * z * -transform.forward) + (speed * x * -transform.right);
+        Vector3 vel = (currentSpeed * z * -transform.forward) + (currentSpeed * x * -transform.right);
         rg.velocity = vel;
 
         Vector3 rot = new(0, turn.x, 0);
@@ -53,7 +63,10 @@ public class PlayerMovement : MonoBehaviour
             Destroy(other.transform.root.gameObject);
         }
         if (other.gameObject.name == "WinTrigger") {
-            
+            SceneManager.LoadScene(2);
+        }
+        if (other.gameObject.tag == "Enemy") {
+            SceneManager.LoadScene(3);
         }
     }
 }

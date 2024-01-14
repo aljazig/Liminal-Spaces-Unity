@@ -11,6 +11,8 @@ public class ButtonActions : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Cursor.lockState = CursorLockMode.None;
+
         if (tryAgain) { 
             tryAgain.onClick.AddListener(() => SceneManager.LoadScene(1));
         }
