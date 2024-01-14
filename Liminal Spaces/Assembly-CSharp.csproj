@@ -71,6 +71,7 @@
     <Compile Include="Assets/Scripts/HallwayUpkeep.cs" />
     <Compile Include="Assets/Scripts/DrawGraphity.cs" />
     <Compile Include="Assets/Scripts/EndlessHallwayTP.cs" />
+    <Compile Include="Assets/Scripts/Monster1Script.cs" />
     <Compile Include="Assets/Scripts/PlayerMovement.cs" />
   </ItemGroup>
   <ItemGroup>
