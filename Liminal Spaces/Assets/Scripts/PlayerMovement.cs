@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     public float runSpeed = 10.0f;
     public float mouseSensitivity = 5.0f;
     public GameObject donutText;
+    public GameObject[] teleportPoints;
 
     private Vector2 turn;
     private float currentSpeed = 5.0f;
@@ -58,6 +59,7 @@ public class PlayerMovement : MonoBehaviour
             if (donutCheck != other.transform.root.gameObject) {
                 points += 1;
                 txt.text = "Donut count: " + points;
+                PickedUpADonut();
                 donutCheck = other.transform.root.gameObject;
             }
             Destroy(other.transform.root.gameObject);
@@ -68,5 +70,20 @@ public class PlayerMovement : MonoBehaviour
         if (other.gameObject.tag == "Enemy") {
             SceneManager.LoadScene(3);
         }
+    }
+
+    void PickedUpADonut() {
+        int rn = UnityEngine.Random.Range(0, 2);
+        Debug.Log(teleportPoints.Length);
+        if (rn >= 0.5) {
+            RandomTeleport();
+        } else {
+            speed += 1;
+        }
+    }
+
+    void RandomTeleport() {
+        int randPoint = UnityEngine.Random.Range(0, teleportPoints.Length);
+        transform.position = teleportPoints[randPoint].transform.position;
     }
 }
